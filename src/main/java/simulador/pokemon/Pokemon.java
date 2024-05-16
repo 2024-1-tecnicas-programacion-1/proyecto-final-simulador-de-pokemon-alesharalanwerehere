@@ -9,5 +9,12 @@ public abstract class Pokemon {
     
     public Pokemon(String nombre,int salud, int puntosAtaque,String tipo, String estado){
         this.nombre=nombre;
+        this.salud=salud;
+        this.puntosAtaque=puntosAtaque;
+        this.tipo=tipo;
+        this.estado=estado;
+        
     }
+    
+   public atacar
 }
