@@ -1,5 +1,11 @@
 package simulador.entrenador;
 
 public class Entrenador {
-    // TODO: Aquí va tu código
+    private String nombre;
+    private String pokemones;
+    
+    public Entrenador(String nombre, String pokemones){
+        this.nombre = nombre;
+        this.pokemones = pokemones;
+    }
 }
