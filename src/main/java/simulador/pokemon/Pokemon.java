@@ -16,5 +16,12 @@ public abstract class Pokemon {
         
     }
     
-   public atacar
+    public abstract Pokemon atacar();
+    //no estoy segura del tipo de dato que esta recibiendo
+    
+    public abstract int recibirDaño();
+    
+    public abstract Pokemon entrenar();
+    //no estoy segura del tipo de dato que esta recibiendo
+
 }
