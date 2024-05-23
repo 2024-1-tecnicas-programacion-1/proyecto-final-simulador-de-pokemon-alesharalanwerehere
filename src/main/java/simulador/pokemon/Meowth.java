@@ -1,13 +1,12 @@
-package principal;
+package simulador.pokemon;
 
+public class Meowth extends Pokemon{
 
-public class Doduo extends Pokemon{
-
-    public Doduo(String nombre, int salud, int puntosAtaque, String tipo, String estado) {
+    public Meowth(String nombre, int salud, int puntosAtaque, String tipo, String estado) {
         super(nombre, salud, puntosAtaque, tipo, estado);
-        this.nombre="Doduo";
-        this.salud=35;
-        this.puntosAtaque=85;
+        this.nombre="Meowth";
+        this.salud=40;
+        this.puntosAtaque=45;
     }
 
     @Override

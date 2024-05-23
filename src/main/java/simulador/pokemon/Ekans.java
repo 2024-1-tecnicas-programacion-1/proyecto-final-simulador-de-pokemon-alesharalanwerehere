@@ -1,15 +1,12 @@
+package simulador.pokemon;
 
-package principal;
+public class Ekans extends Pokemon{
 
-
-public class Onix extends Pokemon{
-
-    public Onix(String nombre, int salud, int puntosAtaque, String tipo, String estado) {
+    public Ekans(String nombre, int salud, int puntosAtaque, String tipo, String estado) {
         super(nombre, salud, puntosAtaque, tipo, estado);
-        this.nombre="Onix";
+        this.nombre="Ekans";
         this.salud=35;
-        this.puntosAtaque=45;
-
+        this.puntosAtaque=60;
     }
 
     @Override
@@ -26,7 +23,5 @@ public class Onix extends Pokemon{
     public Pokemon entrenar() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-    
-    
     
 }

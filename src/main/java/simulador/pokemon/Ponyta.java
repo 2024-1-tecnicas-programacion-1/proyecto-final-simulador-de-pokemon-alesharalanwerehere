@@ -1,19 +1,18 @@
+package simulador.pokemon;
 
-package principal;
+public class Ponyta extends Pokemon {
 
-
-public class Abra extends Pokemon {
-
-    public Abra(String nombre, int salud, int puntosAtaque, String tipo, String estado) {
+    public Ponyta(String nombre, int salud, int puntosAtaque, String tipo, String estado) {
         super(nombre, salud, puntosAtaque, tipo, estado);
-        this.nombre="Abra";
-        this.salud=25;
-        this.puntosAtaque=20;
+        this.nombre = "Ponyta";
+        this.salud = 50;
+        this.puntosAtaque = 85;
     }
 
     @Override
     public Pokemon atacar() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+
     }
 
     @Override
@@ -25,6 +24,5 @@ public class Abra extends Pokemon {
     public Pokemon entrenar() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-    
-    
+
 }

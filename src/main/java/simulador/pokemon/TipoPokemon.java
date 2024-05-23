@@ -1,4 +1,4 @@
-package principal;
+package simulador.pokemon;
 
 import java.util.ArrayList;
 

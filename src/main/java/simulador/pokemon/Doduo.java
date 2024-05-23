@@ -1,14 +1,12 @@
+package simulador.pokemon;
 
-package principal;
+public class Doduo extends Pokemon{
 
-
-public class Ekans extends Pokemon{
-
-    public Ekans(String nombre, int salud, int puntosAtaque, String tipo, String estado) {
+    public Doduo(String nombre, int salud, int puntosAtaque, String tipo, String estado) {
         super(nombre, salud, puntosAtaque, tipo, estado);
-        this.nombre="Ekans";
+        this.nombre="Doduo";
         this.salud=35;
-        this.puntosAtaque=60;
+        this.puntosAtaque=85;
     }
 
     @Override

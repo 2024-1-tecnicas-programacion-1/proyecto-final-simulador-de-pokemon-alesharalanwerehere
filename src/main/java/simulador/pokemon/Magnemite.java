@@ -1,14 +1,12 @@
+package simulador.pokemon;
 
-package principal;
+public class Magnemite extends Pokemon{
 
-
-public class Staryu extends Pokemon{
-
-    public Staryu(String nombre, int salud, int puntosAtaque, String tipo, String estado) {
+    public Magnemite(String nombre, int salud, int puntosAtaque, String tipo, String estado) {
         super(nombre, salud, puntosAtaque, tipo, estado);
-        this.nombre="Staryu";
-        this.salud=30;
-        this.puntosAtaque=45;
+        this.nombre="Magnemite";
+        this.salud=25;
+        this.puntosAtaque=35;
     }
 
     @Override
