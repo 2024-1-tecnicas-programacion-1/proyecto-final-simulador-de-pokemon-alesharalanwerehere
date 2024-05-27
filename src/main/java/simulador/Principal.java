@@ -1,10 +1,42 @@
-package simulador;
+package simulador.pokemon;
+
+import java.util.Scanner;
+import java.util.List;
+import java.util.ArrayList;
+
+public class Principal {
+    private static List<Entrenador> entrenadores = new ArrayList<>();
+    private static List<Pokemon> pokemones = new ArrayList<>();
+    private static Scanner scanner = new Scanner(System.in);
 
 import java.util.Scanner;
 
 public class Principal {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        //inicializarPokemones();
+        int opcion;
+        do {
+            mostrarMenuPrincipal();
+            opcion = scanner.nextInt();
+            scanner.nextLine(); // Consumir el salto de línea
+            switch (opcion) {
+                case 1:
+                    gestionarEntrenadores();
+                    break;
+                case 2:
+                    //gestionarPokemones();
+                    break;
+                case 3:
+                    //iniciarBatalla();
+                    break;
+                case 4:
+                    System.out.println("Saliendo del simulador...");
+                    break;
+                default:
+                    System.out.println("Opción no válida.");
+            }
+        } while (opcion != 4);
+    }
 
         boolean continuar = true; 
 
@@ -97,3 +129,17 @@ public class Principal {
     }
 }
 
+
+    private static void verListaDeEntrenadores() {
+        System.out.println("Lista de entrenadores:");
+        for (int i = 0; i < entrenadores.size(); i++) {
+            System.out.println((i + 1) + ". " + entrenadores.get(i).getNombre());
+        }
+    }
+
+    private static void seleccionarEntrenador() {
+        verListaDeEntrenadores();
+        System.out.print("Elige el índice del entrenador: ");
+        int indice = scanner.nextInt();
+    }
+}
