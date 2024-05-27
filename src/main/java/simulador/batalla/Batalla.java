@@ -1,5 +1,3 @@
-package simulador;
-
 class Batalla {
     public void iniciarBatalla(Pokemon pokemon1, Pokemon pokemon2) {
         System.out.println("Ahora, va a pelear: " + pokemon1.getNombre() + " y " + pokemon2.getNombre());
@@ -15,8 +13,4 @@ class Batalla {
             System.out.println(pokemon2.getNombre() + " ha an debilitado" + pokemon1.getNombre() + " ganaste");
         }
     }
-    
-   public Pokemon iniciarBatalla(Pokemon pokemon1, Pokemon pokemon2){
-        return pokemon1;
-   }
 }
