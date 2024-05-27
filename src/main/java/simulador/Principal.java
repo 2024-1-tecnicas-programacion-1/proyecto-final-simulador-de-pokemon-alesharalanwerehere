@@ -1,8 +1,10 @@
-package simulador.pokemon;
+package simulador;
 
 import java.util.Scanner;
 import java.util.List;
 import java.util.ArrayList;
+import simulador.entrenador.Entrenador;
+import simulador.pokemon.Pokemon;
 public class Principal {
     private static List<Entrenador> entrenadores = new ArrayList<>();
     private static List<Pokemon> pokemones = new ArrayList<>();
@@ -18,10 +20,10 @@ public class Principal {
                     gestionarEntrenadores();
                     break;
                 case 2:
-                    gestionarPokemones();
+                    // gestionarPokemones();
                     break;
                 case 3:
-                    iniciarBatalla();
+                    // iniciarBatalla();
                     break;
                 case 4:
                     System.out.println("Saliendo del simulador...");

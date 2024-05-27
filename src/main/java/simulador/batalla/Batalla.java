@@ -1,4 +1,8 @@
-class Batalla {
+package simulador.batalla;
+
+import simulador.pokemon.Pokemon;
+
+public class Batalla {
     public void iniciarBatalla(Pokemon pokemon1, Pokemon pokemon2) {
         System.out.println("Ahora, va a pelear: " + pokemon1.getNombre() + " y " + pokemon2.getNombre());
         while (pokemon1.getSalud() > 0 && pokemon2.getSalud() > 0) {

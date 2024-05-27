@@ -1,9 +1,12 @@
+package simulador.pokemon;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import simulador.pokemon.TipoPokemon;
 
 // Clase Pokemon
-abstract class Pokemon {
+public abstract class Pokemon {
     protected String nombre;
     protected int salud;
     protected int puntosDeAtaque;

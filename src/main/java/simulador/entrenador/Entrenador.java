@@ -1,4 +1,10 @@
-class Entrenador {
+package simulador.entrenador;
+
+import java.util.ArrayList;
+import java.util.List;
+import simulador.pokemon.*;
+
+public class Entrenador {
     private String nombre;
     private List<Pokemon> pokemones;
 
@@ -32,6 +38,8 @@ class Entrenador {
             return null;
         }
         mostrarPokemones();
+        // TODO: No podmos utilizar Scanner en una clase de Lógica de Negocio (básicamente cualquier clase distinta a Pincipal)
+        /**
         Scanner scanner = new Scanner(System.in);
         System.out.print("Elige el índice del Pokémon para la batalla: ");
         int indice = scanner.nextInt();
@@ -40,6 +48,8 @@ class Entrenador {
             return null;
         }
         return pokemones.get(indice);
+        * **/
+        return null;
     }
 }
 
