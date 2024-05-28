@@ -11,6 +11,7 @@ public class Batalla {
                 pokemon2.atacar(pokemon1);
             }
         }
+        
         if (pokemon1.getSalud() <= 0) {
             System.out.println(pokemon1.getNombre() + " te han debilitado" + pokemon2.getNombre() + " ganaste");
         } else {
