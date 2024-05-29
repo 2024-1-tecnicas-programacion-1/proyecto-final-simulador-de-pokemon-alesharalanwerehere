@@ -11,8 +11,10 @@ public class Batalla {
         this.pokemon1 = pokemon1;
         this.pokemon2 = pokemon2;
     }
+     
+    // QUITE LOS PARAMETROS Pokemon pokemon1, Pokemon pokemon2
     
-    public void iniciarBatalla(Pokemon pokemon1, Pokemon pokemon2) {
+    public void iniciarBatalla() {
         System.out.println("Ahora, va a pelear: " + pokemon1.getNombre() + " y " + pokemon2.getNombre());
         while (pokemon1.getSalud() > 0 && pokemon2.getSalud() > 0) {
             pokemon1.atacar(pokemon2);
