@@ -1,16 +1,31 @@
 package simulador;
 
+import simulador.pokemones.Ponyta; 
+import simulador.pokemones.*;
 import java.util.Scanner;
 import java.util.List;
 import java.util.ArrayList;
 import simulador.entrenador.Entrenador;
-import simulador.pokemon.Pokemon;
+import simulador.pokemon.*;
 
 public class Principal {
     private static List<Entrenador> entrenadores = new ArrayList<>();
     private static List<Pokemon> pokemones = new ArrayList<>();
     private static Scanner sc = new Scanner(System.in);
+    
     public static void main(String[] args) {
+        
+        Pokemon Ponyta = new Ponyta("Ponyta", 50, 85, TipoPokemon.FUEGO); 
+        Pokemon Goldeen = new Goldeen("Goldeen", 45, 67, TipoPokemon.AGUA);
+        Pokemon Paras = new Paras("Paras", 35, 70, TipoPokemon.BICHO.PLANTA);
+        Pokemon Electrode = new Electrode("Electrode", 60, 50, TipoPokemon.ELECTRICO);
+        Pokemon Staryu = new Staryu("Staryu", 30, 45, TipoPokemon.AGUA);
+        Pokemon Cubone = new Cubone("Cubone", 50, 50, TipoPokemon.TIERRA);
+        Pokemon Doduo = new Doduo("Doduo", 35, 85, TipoPokemon.NORMAL.VOLADOR);
+        Pokemon Lickitung = new Lickitung("Lickitung", 90, 55, TipoPokemon.NORMAL);
+        Pokemon Hitmonchan = new Hitmonchan("Hitmonchan", 50, 105, TipoPokemon.LUCHA);
+        Pokemon Ekans = new Ekans("Ekans", 35, 60, TipoPokemon.VENENO);
+        
         int opcion;
         do {
             menuPrincipal();
@@ -18,7 +33,7 @@ public class Principal {
             sc.nextLine(); 
             switch (opcion) {
                 case 1:
-                    gestionarEntrenadores(); //? FALTA SUBMENU AL seleccionarEntrenador()
+                    gestionarEntrenadores(); 
                     break;
                 case 2:
                     gestionarPokemones();
@@ -27,7 +42,10 @@ public class Principal {
                     iniciarBatalla();
                     break;
                 case 4:
-                    System.out.println("Saliendo del simulador...");
+                    System.out.println("Adiós");
+                    System.out.println(".....");
+                    System.out.println("...");
+                    System.out.println(".");
                     break;
                 default:
                     System.out.println("Opción no válida.");
@@ -60,7 +78,7 @@ public class Principal {
             System.out.println("║ 4. Volver al menú principal         ║");
             System.out.println("╚═════════════════════════════════════════╝");
             opcion = sc.nextInt();
-            sc.nextLine(); // Consumir el salto de línea
+            sc.nextLine();
             switch (opcion) {
                 case 1:
                     registrarNuevoEntrenador();
@@ -127,41 +145,43 @@ public class Principal {
             System.out.println("║ 4. Volver a Gestionar Entrenadores  ║");
             System.out.println("╚═════════════════════════════════════════╝");
             int opcionSubMenu = sc.nextInt();
-            sc.nextLine(); // Consumir el salto de línea
+            sc.nextLine(); 
 
             switch (opcionSubMenu) {
                 case 1:
-                    verEquipoDePokemones();
+                    System.out.println("Pokémones de " + entrenadorSeleccionado.getNombre() + ":"); //VER STATS DEL POKE PARA VER SI EFECTIVAMENTE FUE ENTRENADO
+                    entrenadorSeleccionado.mostrarPokemones();//PEQUEÑO ERROR SE VE DOS VECES EL NOMBRE DEL ENTRENADOR
                     break;
                 case 2:
-                    agregarPokemonAlEquipo();
+                    System.out.print("Introduce el nombre del Pokémon: ");
+                    String nombre = sc.nextLine();
+                    System.out.print("Introduce los puntos de salud del Pokémon: ");
+                    int salud = sc.nextInt();
+                    System.out.print("Introduce los puntos de ataque del Pokémon: ");
+                    int ataque = sc.nextInt();
+                    sc.nextLine();
+                    Pokemon nuevoPokemon = new Ponyta(nombre, salud, ataque, TipoPokemon.NORMAL);
+                    entrenadorSeleccionado.agregarPokemon(nuevoPokemon);
+                    System.out.println("Pokémon añadido: " + nuevoPokemon.getNombre());
                     break;
                 case 3:
-                    entrenarPokemon();
+                    System.out.println("Seleccione un Pokémon para entrenar:"); //AL SELECCIONAR MOSTRAR NUMERO DE POKEMON; ES CONFUSO
+                    entrenadorSeleccionado.mostrarPokemones();
+                    int pokemonIndex = sc.nextInt() - 1;
+                    Pokemon pokemonParaEntrenar = entrenadorSeleccionado.seleccionarPokemon(pokemonIndex);
+                    if (pokemonParaEntrenar != null) {
+                        pokemonParaEntrenar.entrenar();
+                        System.out.println(pokemonParaEntrenar.getNombre() + " ha sido entrenado.");
+                    }
                     break;
                 case 4:
                     break;
                 default:
                     System.out.println("Opción no válida.");
             }
-
         } while (opcionEntrenador != 4);
-
     } //🆗
     
-    private static void verEquipoDePokemones(){
-       System.out.println("NO SE ayuda");
-   } //?
-      
-    private static void agregarPokemonAlEquipo(){
-       System.out.println("NO SE ayuda");
-   } //?
-   
-    private static void entrenarPokemon(){
-        
-        System.out.println("NO SE ayuda");
-    } //?
-
     private static void gestionarPokemones(){
         int opcion;
         do {
@@ -173,30 +193,57 @@ public class Principal {
             System.out.println("║ 3. Volver al menú principal         ║");
             System.out.println("╚═════════════════════════════════════════╝");
             opcion = sc.nextInt();
-            sc.nextLine(); // Consumir el salto de línea
+            sc.nextLine(); 
+                  
             switch (opcion) {
                 case 1:
-                    verPokemones();
+                    verPokemones(); 
                     break;
                 case 2:
-                    registrarPokemones();
+                    registrarPokemon();
                     break;
                 case 3:
+                    System.out.println("Volviendo al menú principal...");
                     break;
                 default:
                     System.out.println("Opción no válida.");
-            }
+                    break;
+            }        
         } while (opcion != 3);
     } //🆗
-
-    private static void verPokemones(){
-       System.out.println("no estoy segura");
-   } //?
-   
-    private static void registrarPokemones(){
-       System.out.println("no estoy segura");
-   } //?
     
+    private static void verPokemones() {
+    System.out.println("\n╔═════════════════════════════════════════╗");
+    System.out.println("║       Lista de Pokémones Registrados    ║");
+    System.out.println("╠═════════════════════════════════════════╣");
+    if (pokemones.isEmpty()) {
+        System.out.println("║    No hay Pokémones registrados         ║");
+    } else {
+        for (int i = 0; i < pokemones.size(); i++) {
+            System.out.printf("  %2d. %s (Salud: %d, Ataque: %d, Tipo: %s)\n", (i + 1), pokemones.get(i).getNombre(), pokemones.get(i).getSalud(), pokemones.get(i).getPuntosDeAtaque(), pokemones.get(i).getTipo());
+        }
+    }
+    System.out.println("╚═════════════════════════════════════════╝");
+}
+
+    private static void registrarPokemon() {
+    System.out.println("\n╔══════════════════════════════════════════╗");
+    System.out.println("║       Registrar Nuevo Pokémon            ║");
+    System.out.println("╠══════════════════════════════════════════╣");
+    System.out.print("Introduce el nombre del Pokémon: ");
+    String nombre = sc.nextLine();
+    System.out.print("Introduce los puntos de salud del Pokémon: ");
+    int salud = sc.nextInt();
+    System.out.print("Introduce los puntos de ataque del Pokémon: ");
+    int ataque = sc.nextInt();
+    sc.nextLine(); 
+
+    //ESTO NO SE COMO HACERLOOOOOO
+    Pokemon nuevoPokemon = new Ponyta(nombre, salud, ataque, TipoPokemon.FUEGO);
+    pokemones.add(nuevoPokemon);
+    System.out.println("Pokémon registrado: " + nuevoPokemon.getNombre());
+}
+
     private static void iniciarBatalla(){
         int opcion;
         do {
