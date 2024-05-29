@@ -21,12 +21,15 @@ public class Entrenador {
         pokemon.entrenar();
     }
 
-    public void mostrarPokemones() {//error raro
+    public void mostrarPokemones() {
         System.out.println("Pokemones de " + nombre + ":");
+        int iteracion = 1;
         for (Pokemon pokemon : pokemones) {
-            System.out.println(pokemon.getNombre());
+            System.out.println(iteracion + ". " + pokemon.getNombre() + ", Salud: " + pokemon.getSalud() + ", Ataque: " + pokemon.getPuntosDeAtaque());
+            iteracion++;
         }
     }
+
     
     public Pokemon seleccionarPokemon(int indice) {
         if (indice >= 0 && indice < pokemones.size()) {

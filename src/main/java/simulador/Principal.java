@@ -9,6 +9,7 @@ import simulador.entrenador.Entrenador;
 import simulador.pokemon.*;
 
 public class Principal {
+    
     private static List<Entrenador> entrenadores = new ArrayList<>();
     private static List<Pokemon> pokemones = new ArrayList<>();
     private static Scanner sc = new Scanner(System.in);
@@ -119,7 +120,6 @@ public class Principal {
                 System.out.printf("  %2d. %s \n", (i + 1), entrenadores.get(i).getNombre());
             }
         }
-
         System.out.println("╚══════════════════════════════════════════╝");
     } //🆗
 
@@ -145,12 +145,11 @@ public class Principal {
             System.out.println("║ 4. Volver a Gestionar Entrenadores  ║");
             System.out.println("╚═════════════════════════════════════════╝");
             int opcionSubMenu = sc.nextInt();
-            sc.nextLine(); // Consumir el salto de línea
+            sc.nextLine(); 
 
             switch (opcionSubMenu) {
                 case 1:
-                    System.out.println("Pokémones de " + entrenadorSeleccionado.getNombre() + ":"); //VER STATS DEL POKE PARA VER SI EFECTIVAMENTE FUE ENTRENADO
-                    entrenadorSeleccionado.mostrarPokemones();//PEQUEÑO ERROR SE VE DOS VECES EL NOMBRE DEL ENTRENADOR
+                    entrenadorSeleccionado.mostrarPokemones();
                     break;
                 case 2:
                     System.out.print("Introduce el nombre del Pokémon: ");
@@ -165,7 +164,7 @@ public class Principal {
                     System.out.println("Pokémon añadido: " + nuevoPokemon.getNombre());
                     break;
                 case 3:
-                    System.out.println("Seleccione un Pokémon para entrenar:"); //AL SELECCIONAR MOSTRAR NUMERO DE POKEMON; ES CONFUSO
+                    System.out.println("Seleccione un Pokémon para entrenar:");
                     entrenadorSeleccionado.mostrarPokemones();
                     int pokemonIndex = sc.nextInt() - 1;
                     Pokemon pokemonParaEntrenar = entrenadorSeleccionado.seleccionarPokemon(pokemonIndex);
@@ -280,8 +279,7 @@ public class Principal {
                 default:
                     System.out.println("Opción no válida.");
             }
-        } while (opcion != 6);
-        
+        } while (opcion != 6);      
    } //🆗
    
     private static void eleccionEntrenador1(){
@@ -309,5 +307,6 @@ public class Principal {
         2. [Pokémon 2] Atacar
         3. Finalizar la batalla
         */
+       
     } //?
 }
