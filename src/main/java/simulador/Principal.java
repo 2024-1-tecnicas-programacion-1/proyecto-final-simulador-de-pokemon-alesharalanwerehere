@@ -12,7 +12,7 @@ public class Principal {
     private static List<Entrenador> entrenadores = new ArrayList<>();
     private static List<Pokemon> pokemones = new ArrayList<>();
     private static Scanner sc = new Scanner(System.in);
-    
+        
     public static void main(String[] args) {
         
         Pokemon Ponyta = new Ponyta("Ponyta", 50, 85, TipoPokemon.FUEGO); 
@@ -25,7 +25,8 @@ public class Principal {
         Pokemon Lickitung = new Lickitung("Lickitung", 90, 55, TipoPokemon.NORMAL);
         Pokemon Hitmonchan = new Hitmonchan("Hitmonchan", 50, 105, TipoPokemon.LUCHA);
         Pokemon Ekans = new Ekans("Ekans", 35, 60, TipoPokemon.VENENO);
-        
+
+     
         int opcion;
         do {
             menuPrincipal();
@@ -33,7 +34,7 @@ public class Principal {
             sc.nextLine(); 
             switch (opcion) {
                 case 1:
-                    gestionarEntrenadores(); 
+                    gestionarEntrenadores();
                     break;
                 case 2:
                     gestionarPokemones();
@@ -52,19 +53,18 @@ public class Principal {
             }
         } while (opcion != 4);
     }
-    
-    private static void menuPrincipal(){
-            System.out.println("\n╔═══════════════════════════════════════════════╗");
-            System.out.println("║        Simulador de Batallas Pokémon     ║");
-            System.out.println("╠═══════════════════════════════════════════════╣");
-            System.out.println("║ 1. Gestionar Entrenadores                ║");
-            System.out.println("║ 2. Gestionar Pokémones                   ║");
-            System.out.println("║ 3. Iniciar Batalla                       ║");
-            System.out.println("║ 4. Salir                                 ║");
-            System.out.println("╚═══════════════════════════════════════════════╝");
-            System.out.print("Elige una opción: ");
 
-    }
+    private static void menuPrincipal(){
+        System.out.println("\n╔═══════════════════════════════════════════════╗");
+        System.out.println("║        Simulador de Batallas Pokémon     ║");
+        System.out.println("╠═══════════════════════════════════════════════╣");
+        System.out.println("║ 1. Gestionar Entrenadores                ║");
+        System.out.println("║ 2. Gestionar Pokémones                   ║");
+        System.out.println("║ 3. Iniciar Batalla                       ║");
+        System.out.println("║ 4. Salir                                 ║");
+        System.out.println("╚═══════════════════════════════════════════════╝");
+        System.out.print("Elige una opción: ");
+    } //🆗
 
     private static void gestionarEntrenadores(){
         int opcion;
@@ -78,7 +78,7 @@ public class Principal {
             System.out.println("║ 4. Volver al menú principal         ║");
             System.out.println("╚═════════════════════════════════════════╝");
             opcion = sc.nextInt();
-            sc.nextLine();
+            sc.nextLine(); 
             switch (opcion) {
                 case 1:
                     registrarNuevoEntrenador();
@@ -145,7 +145,7 @@ public class Principal {
             System.out.println("║ 4. Volver a Gestionar Entrenadores  ║");
             System.out.println("╚═════════════════════════════════════════╝");
             int opcionSubMenu = sc.nextInt();
-            sc.nextLine(); 
+            sc.nextLine(); // Consumir el salto de línea
 
             switch (opcionSubMenu) {
                 case 1:
@@ -180,7 +180,7 @@ public class Principal {
                     System.out.println("Opción no válida.");
             }
         } while (opcionEntrenador != 4);
-    } //🆗
+    } //?
     
     private static void gestionarPokemones(){
         int opcion;
@@ -227,22 +227,22 @@ public class Principal {
 }
 
     private static void registrarPokemon() {
-    System.out.println("\n╔══════════════════════════════════════════╗");
-    System.out.println("║       Registrar Nuevo Pokémon            ║");
-    System.out.println("╠══════════════════════════════════════════╣");
-    System.out.print("Introduce el nombre del Pokémon: ");
-    String nombre = sc.nextLine();
-    System.out.print("Introduce los puntos de salud del Pokémon: ");
-    int salud = sc.nextInt();
-    System.out.print("Introduce los puntos de ataque del Pokémon: ");
-    int ataque = sc.nextInt();
-    sc.nextLine(); 
+        System.out.println("\n╔══════════════════════════════════════════╗");
+        System.out.println("║       Registrar Nuevo Pokémon            ║");
+        System.out.println("╠══════════════════════════════════════════╣");
+        System.out.print("Introduce el nombre del Pokémon: ");
+        String nombre = sc.nextLine();
+        System.out.print("Introduce los puntos de salud del Pokémon: ");
+        int salud = sc.nextInt();
+        System.out.print("Introduce los puntos de ataque del Pokémon: ");
+        int ataque = sc.nextInt();
+        sc.nextLine(); 
 
-    //ESTO NO SE COMO HACERLOOOOOO
-    Pokemon nuevoPokemon = new Ponyta(nombre, salud, ataque, TipoPokemon.FUEGO);
-    pokemones.add(nuevoPokemon);
-    System.out.println("Pokémon registrado: " + nuevoPokemon.getNombre());
-}
+        //ESTO NO SE COMO HACERLOOOOOO
+        Pokemon nuevoPokemon = new Ponyta(nombre, salud, ataque, TipoPokemon.FUEGO);
+        pokemones.add(nuevoPokemon);
+        System.out.println("Pokémon registrado: " + nuevoPokemon.getNombre());
+    }
 
     private static void iniciarBatalla(){
         int opcion;
@@ -258,7 +258,7 @@ public class Principal {
             System.out.println("║ 6. Volver al menú principal         ║");
             System.out.println("╚═════════════════════════════════════════╝");
             opcion = sc.nextInt();
-            sc.nextLine(); // Consumir el salto de línea
+            sc.nextLine(); 
             switch (opcion) {
                 case 1:
                     eleccionEntrenador1();
@@ -309,6 +309,5 @@ public class Principal {
         2. [Pokémon 2] Atacar
         3. Finalizar la batalla
         */
-       
     } //?
 }
