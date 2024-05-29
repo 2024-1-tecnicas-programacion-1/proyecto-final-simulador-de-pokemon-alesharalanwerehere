@@ -319,6 +319,19 @@ public class Principal {
             }
         } while (opcion != 6);      
    } //? FALA MOSTRAR DURANTE LA BATALLA
+
+
+    // ---FALTANTES DE MOMENTO:---
+    
+    //[Nombre del Pokémon 1] vs. [Nombre del Pokémon 2]
+//  1. [Pokémon 1] Atacar
+//  2. [Pokémon 2] Atacar
+//  3. Finalizar la batalla
     
     //HAY UN ERROR AL intentar salir del menu gestionarEntrenadores();
+    //FALTA ANALISIS COMPLEJIDAD 
+    //FALTA PERSISTENCIA
+    //FALTA PRUEBAS UNITARIAS
+    //FALATA DIAGRAMA 
+    
 }
