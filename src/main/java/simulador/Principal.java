@@ -11,7 +11,6 @@ import simulador.entrenador.Entrenador;
 import simulador.pokemon.*;
 import persistencia.ArchivosConexion;
 
-
 public class Principal {
     
     private static List<Entrenador> entrenadores = new ArrayList<>();
@@ -19,8 +18,6 @@ public class Principal {
     private static Scanner sc = new Scanner(System.in);
         
     public static void main(String[] args) {
-        
-
         
         int opcion;
         do {
@@ -38,7 +35,7 @@ public class Principal {
                     iniciarBatalla();
                     break;
                 case 4:
-                    persistencia();
+                    //persistencia();
                     System.out.println("Adiós");
                     System.out.println(".....");
                     System.out.println("...");
@@ -129,7 +126,7 @@ public class Principal {
 
             if (opcionEntrenador < 1 || opcionEntrenador > entrenadores.size()) {
                 System.out.println("¡Opción inválida! Por favor, selecciona un número válido.");
-                continue; // Continuar al inicio del bucle phasta que el usuario ingrese una opción válida
+                continue; // Continuar / "saltar" al inicio del bucle phasta que se ingrese una opción correcta
             }
 
             Entrenador entrenadorSeleccionado = entrenadores.get(opcionEntrenador - 1);
@@ -466,7 +463,7 @@ public class Principal {
         System.out.println("Los pokemones guardados son:");
         for (int i = 0; i < pokemones.size(); i++) {
             Pokemon p = pokemones.get(i);
-            System.out.println(p.getNombre() + " - Salud: " + p.getSalud() + " - Ataque: " + p.getPuntosDeAtaque() + " - " + p.getTipo() + " - " + p.getEstado());
+            System.out.println(p.getNombre() + " - Salud: " + p.getSalud() + " - Ataque: " + p.getPuntosDeAtaque() + " - " + p.getTipo());
         }
     }
 }

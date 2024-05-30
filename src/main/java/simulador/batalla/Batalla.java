@@ -12,9 +12,7 @@ public class Batalla {
         this.pokemon1 = pokemon1;
         this.pokemon2 = pokemon2;
     }
-     
-    // QUITE LOS PARAMETROS Pokemon pokemon1, Pokemon pokemon2
-    
+         
     public void iniciarBatalla() {
 
         System.out.println(pokemon1.getNombre()+" vs. "+pokemon2.getNombre());
@@ -47,5 +45,4 @@ public class Batalla {
         int dañoBase = atacante.getPuntosDeAtaque();
         return (int) (dañoBase * multiplicador);
     }
-    //AGREGAR CALCULAR DAÑO AL UML
 }
