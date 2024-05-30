@@ -17,18 +17,6 @@ public class Principal {
         
     public static void main(String[] args) {
         
-        Pokemon Ponyta = new Ponyta("Ponyta", 50, 85, TipoPokemon.FUEGO); 
-        Pokemon Goldeen = new Goldeen("Goldeen", 45, 67, TipoPokemon.AGUA);
-        Pokemon Paras = new Paras("Paras", 35, 70, TipoPokemon.BICHO.PLANTA);
-        Pokemon Electrode = new Electrode("Electrode", 60, 50, TipoPokemon.ELECTRICO);
-        Pokemon Staryu = new Staryu("Staryu", 30, 45, TipoPokemon.AGUA);
-        Pokemon Cubone = new Cubone("Cubone", 50, 50, TipoPokemon.TIERRA);
-        Pokemon Doduo = new Doduo("Doduo", 35, 85, TipoPokemon.NORMAL.VOLADOR);
-        Pokemon Lickitung = new Lickitung("Lickitung", 90, 55, TipoPokemon.NORMAL);
-        Pokemon Hitmonchan = new Hitmonchan("Hitmonchan", 50, 105, TipoPokemon.LUCHA);
-        Pokemon Ekans = new Ekans("Ekans", 35, 60, TipoPokemon.VENENO);
-
-     
         int opcion;
         do {
             menuPrincipal();
@@ -93,6 +81,7 @@ public class Principal {
                     break;
                 case 4:
                     menuPrincipal();
+                    System.out.println("Volviendo al menú principal...");
                     break;
                 default:
                     System.out.println("Opción no válida.");
@@ -154,6 +143,9 @@ public class Principal {
                     entrenadorSeleccionado.mostrarPokemones();
                     break;
                 case 2:
+                    System.out.println("\n╔══════════════════════════════════════════╗");
+                    System.out.println("║       Registrar Nuevo Pokémon            ║");
+                    System.out.println("╠══════════════════════════════════════════╣");
                     System.out.print("Introduce el nombre del Pokémon: ");
                     String nombre = sc.nextLine();
                     System.out.print("Introduce los puntos de salud del Pokémon: ");
@@ -161,9 +153,85 @@ public class Principal {
                     System.out.print("Introduce los puntos de ataque del Pokémon: ");
                     int ataque = sc.nextInt();
                     sc.nextLine();
-                    Pokemon nuevoPokemon = new Ponyta(nombre, salud, ataque, TipoPokemon.NORMAL);
-                    entrenadorSeleccionado.agregarPokemon(nuevoPokemon);
-                    System.out.println("Pokémon añadido: " + nuevoPokemon.getNombre());
+
+                    System.out.println("\nSelecciona el tipo de Pokémon:");
+                    System.out.println("1. Ponyta");
+                    System.out.println("2. Goldeen");
+                    System.out.println("3. Paras");
+                    System.out.println("4. Electrode");
+                    System.out.println("5. Staryu");
+                    System.out.println("6. Cubone");
+                    System.out.println("7. Doduo");
+                    System.out.println("8. Lickitung");
+                    System.out.println("9. Hitmonchan");
+                    System.out.println("10. Ekans");
+                    System.out.println("Introduce el número del tipo: ");
+                    int tipoOpcion = sc.nextInt();
+                    sc.nextLine();
+
+                    switch (tipoOpcion) {
+                        case 1:
+                            Pokemon Ponyta = new Ponyta(nombre, salud, ataque, TipoPokemon.FUEGO);
+                            pokemones.add(Ponyta);
+                            entrenadorSeleccionado.agregarPokemon(Ponyta);
+                            System.out.println("Pokémon registrado: " + Ponyta.getNombre());
+                            break;
+                        case 2:
+                            Pokemon Goldeen = new Goldeen(nombre, salud, ataque, TipoPokemon.AGUA);
+                            pokemones.add(Goldeen);
+                            entrenadorSeleccionado.agregarPokemon(Goldeen);
+                            System.out.println("Pokémon registrado: " + Goldeen.getNombre());
+                            break;
+                        case 3:
+                            Pokemon Paras = new Paras(nombre, salud, ataque, TipoPokemon.BICHO.PLANTA);
+                            pokemones.add(Paras);
+                            entrenadorSeleccionado.agregarPokemon(Paras);
+                            System.out.println("Pokémon registrado: " + Paras.getNombre());
+                            break;
+                        case 4:
+                            Pokemon Electrode = new Electrode(nombre, salud, ataque, TipoPokemon.ELECTRICO);
+                            pokemones.add(Electrode);
+                            entrenadorSeleccionado.agregarPokemon(Electrode);
+                            System.out.println("Pokémon registrado: " + Electrode.getNombre());
+                            break;
+                        case 5:
+                            Pokemon Staryu = new Staryu(nombre, salud, ataque, TipoPokemon.AGUA);
+                            pokemones.add(Staryu);
+                            entrenadorSeleccionado.agregarPokemon(Staryu);
+                            System.out.println("Pokémon registrado: " + Staryu.getNombre());
+                            break;
+                        case 6:
+                            Pokemon Cubone = new Cubone(nombre, salud, ataque, TipoPokemon.TIERRA);
+                            pokemones.add(Cubone);
+                            entrenadorSeleccionado.agregarPokemon(Cubone);
+                            System.out.println("Pokémon registrado: " + Cubone.getNombre());
+                            break;
+                        case 7:
+                            Pokemon Doduo = new Doduo(nombre, salud, ataque, TipoPokemon.NORMAL.VOLADOR);
+                            pokemones.add(Doduo);
+                            entrenadorSeleccionado.agregarPokemon(Doduo);
+                            System.out.println("Pokémon registrado: " + Doduo.getNombre());
+                            break;
+                        case 8:
+                            Pokemon Lickitung = new Lickitung(nombre, salud, ataque, TipoPokemon.NORMAL);
+                            pokemones.add(Lickitung);
+                            entrenadorSeleccionado.agregarPokemon(Lickitung);
+                            System.out.println("Pokémon registrado: " + Lickitung.getNombre());
+                        case 9:
+                            Pokemon Hitmonchan = new Hitmonchan(nombre, salud, ataque, TipoPokemon.LUCHA);
+                            pokemones.add(Hitmonchan);
+                            entrenadorSeleccionado.agregarPokemon(Hitmonchan);
+                            System.out.println("Pokémon registrado: " + Hitmonchan.getNombre());
+                            break;
+                        case 10:
+                            Pokemon Ekans = new Ekans(nombre, salud, ataque, TipoPokemon.VENENO);
+                            pokemones.add(Ekans);
+                            entrenadorSeleccionado.agregarPokemon(Ekans);
+                            System.out.println("Pokémon registrado: " + Ekans.getNombre());
+                            break;
+                        default:
+                            System.out.println("Opción no válida.");
+                        }
                     break;
                 case 3:
                     System.out.println("Seleccione un Pokémon para entrenar:");
@@ -239,13 +307,78 @@ public class Principal {
         int salud = sc.nextInt();
         System.out.print("Introduce los puntos de ataque del Pokémon: ");
         int ataque = sc.nextInt();
-        sc.nextLine(); 
-
-        //ESTO NO SE COMO HACERLOOOOOO
-        Pokemon nuevoPokemon = new Ponyta(nombre, salud, ataque, TipoPokemon.FUEGO);
-        pokemones.add(nuevoPokemon);
-        System.out.println("Pokémon registrado: " + nuevoPokemon.getNombre());
-    } //? FALTA SWITCH DE LOS TIPOS DE POKE
+        sc.nextLine();
+        
+        System.out.println("\nSelecciona el tipo de Pokémon:");
+        System.out.println("1. Ponyta");
+        System.out.println("2. Goldeen");
+        System.out.println("3. Paras");
+        System.out.println("4. Electrode");
+        System.out.println("5. Staryu");
+        System.out.println("6. Cubone");
+        System.out.println("7. Doduo");
+        System.out.println("8. Lickitung");
+        System.out.println("9. Hitmonchan");
+        System.out.println("10. Ekans");
+        System.out.println("Introduce el número del tipo: ");
+        int tipoOpcion = sc.nextInt();
+        sc.nextLine();
+    
+        switch (tipoOpcion) {
+            case 1:
+                Pokemon Ponyta = new Ponyta(nombre, salud, ataque, TipoPokemon.FUEGO);
+                pokemones.add(Ponyta);
+                System.out.println("Pokémon registrado: " + Ponyta.getNombre());
+                break;
+            case 2:
+                Pokemon Goldeen = new Goldeen(nombre, salud, ataque, TipoPokemon.AGUA);
+                pokemones.add(Goldeen);
+                System.out.println("Pokémon registrado: " + Goldeen.getNombre());
+                break;
+            case 3:
+                Pokemon Paras = new Paras(nombre, salud, ataque, TipoPokemon.BICHO.PLANTA);
+                pokemones.add(Paras);
+                System.out.println("Pokémon registrado: " + Paras.getNombre());
+                break;
+            case 4:
+                Pokemon Electrode = new Electrode(nombre, salud, ataque, TipoPokemon.ELECTRICO);
+                pokemones.add(Electrode);
+                System.out.println("Pokémon registrado: " + Electrode.getNombre());
+                break;
+            case 5:
+                Pokemon Staryu = new Staryu(nombre, salud, ataque, TipoPokemon.AGUA);
+                pokemones.add(Staryu);
+                System.out.println("Pokémon registrado: " + Staryu.getNombre());
+                break;
+            case 6:
+                Pokemon Cubone = new Cubone(nombre, salud, ataque, TipoPokemon.TIERRA);
+                pokemones.add(Cubone);
+                System.out.println("Pokémon registrado: " + Cubone.getNombre());
+                break;
+            case 7:
+                Pokemon Doduo = new Doduo(nombre, salud, ataque, TipoPokemon.NORMAL.VOLADOR);
+                pokemones.add(Doduo);
+                System.out.println("Pokémon registrado: " + Doduo.getNombre());
+                break;
+            case 8:
+                Pokemon Lickitung = new Lickitung(nombre, salud, ataque, TipoPokemon.NORMAL);
+                pokemones.add(Lickitung);
+                System.out.println("Pokémon registrado: " + Lickitung.getNombre());
+                break;
+            case 9:
+                Pokemon Hitmonchan = new Hitmonchan(nombre, salud, ataque,TipoPokemon.LUCHA);
+                pokemones.add(Hitmonchan);
+                System.out.println("Pokémon registrado: " + Hitmonchan.getNombre());
+                break;
+            case 10:
+                Pokemon Ekans = new Ekans(nombre, salud, ataque, TipoPokemon.VENENO);
+                pokemones.add(Ekans);
+                System.out.println("Pokémon registrado: " + Ekans.getNombre());
+                break;
+            default:
+                System.out.println("Opción no válida.");
+            }
+    }
 
     private static void iniciarBatalla(){
         int opcion;
@@ -318,20 +451,10 @@ public class Principal {
                     System.out.println("Opción no válida.");
             }
         } while (opcion != 6);      
-   } //? FALA MOSTRAR DURANTE LA BATALLA
-
-
-    // ---FALTANTES DE MOMENTO:---
+   }
     
-    //[Nombre del Pokémon 1] vs. [Nombre del Pokémon 2]
-//  1. [Pokémon 1] Atacar
-//  2. [Pokémon 2] Atacar
-//  3. Finalizar la batalla
-    
-    //HAY UN ERROR AL intentar salir del menu gestionarEntrenadores();
     //FALTA ANALISIS COMPLEJIDAD 
     //FALTA PERSISTENCIA
     //FALTA PRUEBAS UNITARIAS
-    //FALATA DIAGRAMA 
     
 }

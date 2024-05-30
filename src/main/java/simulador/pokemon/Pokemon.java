@@ -1,9 +1,5 @@
 package simulador.pokemon;
 
-import java.util.ArrayList;
-import java.util.List;
-import simulador.pokemon.TipoPokemon;
-
 public abstract class Pokemon {
     protected String nombre;
     protected int salud;

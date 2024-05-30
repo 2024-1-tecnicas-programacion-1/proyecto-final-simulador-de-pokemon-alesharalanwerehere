@@ -30,7 +30,6 @@ public class Entrenador {
         }
     }
 
-    
     public Pokemon seleccionarPokemon(int indice) {
         if (indice >= 0 && indice < pokemones.size()) {
             return pokemones.get(indice);
