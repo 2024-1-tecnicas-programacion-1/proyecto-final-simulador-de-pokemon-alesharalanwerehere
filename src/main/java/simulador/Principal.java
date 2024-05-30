@@ -144,7 +144,7 @@ public class Principal {
                     break;
                 case 2:
                     System.out.println("\n╔══════════════════════════════════════════╗");
-                    System.out.println("║       Registrar Nuevo Pokémon            ║");
+                    System.out.println("║       Registrar Nuevo Pokémon        ║");
                     System.out.println("╠══════════════════════════════════════════╣");
                     System.out.print("Introduce el nombre del Pokémon: ");
                     String nombre = sc.nextLine();
@@ -152,8 +152,6 @@ public class Principal {
                     int salud = sc.nextInt();
                     System.out.print("Introduce los puntos de ataque del Pokémon: ");
                     int ataque = sc.nextInt();
-                    sc.nextLine();
-
                     System.out.println("\nSelecciona el tipo de Pokémon:");
                     System.out.println("1. Ponyta");
                     System.out.println("2. Goldeen");
@@ -307,8 +305,6 @@ public class Principal {
         int salud = sc.nextInt();
         System.out.print("Introduce los puntos de ataque del Pokémon: ");
         int ataque = sc.nextInt();
-        sc.nextLine();
-        
         System.out.println("\nSelecciona el tipo de Pokémon:");
         System.out.println("1. Ponyta");
         System.out.println("2. Goldeen");
@@ -452,9 +448,7 @@ public class Principal {
             }
         } while (opcion != 6);      
    }
-    
     //FALTA ANALISIS COMPLEJIDAD 
     //FALTA PERSISTENCIA
     //FALTA PRUEBAS UNITARIAS
-    
 }
