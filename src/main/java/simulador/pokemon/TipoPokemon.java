@@ -3,6 +3,7 @@ package simulador.pokemon;
 public enum TipoPokemon{
     NORMAL, FUEGO, AGUA, ELECTRICO, PLANTA, TIERRA, VOLADOR, LUCHA, BICHO, VENENO; 
 
+    // Complejidad temporal: O(1) Tiempo constante.
     public static double obtenerMultiplicadorDeDaño(TipoPokemon atacante, TipoPokemon defensor){
         switch (atacante) {
             case FUEGO:

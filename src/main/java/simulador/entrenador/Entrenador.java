@@ -12,15 +12,18 @@ public class Entrenador {
         this.nombre = nombre;
         this.pokemones = new ArrayList<>();
     }
-
+    
+    // Complejidad temporal: O(1) Tiempo constante.
     public void agregarPokemon(Pokemon pokemon) {
         this.pokemones.add(pokemon);
     }
 
+    // Complejidad temporal: O(1) Tiempo constante.
     public void entrenarPokemon(Pokemon pokemon) {
         pokemon.entrenar();
     }
 
+    // Complejidad temporal: O(N) Tiempo lineal.
     public void mostrarPokemones() {
         System.out.println("Pokemones de " + nombre + ":");
         int iteracion = 1;
@@ -30,6 +33,7 @@ public class Entrenador {
         }
     }
 
+    // Complejidad temporal: O(1) Tiempo constante.
     public Pokemon seleccionarPokemon(int indice) {
         if (indice >= 0 && indice < pokemones.size()) {
             return pokemones.get(indice);
@@ -39,6 +43,7 @@ public class Entrenador {
         }
     }
 
+    // Complejidad temporal: O(1) Tiempo constante.
     public Pokemon prepararBatalla(int indicePokemon){
         if (pokemones.isEmpty()) {
             System.out.println("El entrenador " + nombre + " no tiene Pokémon para la batalla.");
@@ -53,14 +58,17 @@ public class Entrenador {
         return pokemones.get(indicePokemon - 1);
     }
     
+    // Complejidad temporal: O(1) Tiempo constante.
     public String getNombre() {
         return nombre;
     }
 
+    // Complejidad temporal: O(1) Tiempo constante.
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
+    // Complejidad temporal: O(1) Tiempo constante.
     public List<Pokemon> getPokemones() {
         return pokemones;
     }

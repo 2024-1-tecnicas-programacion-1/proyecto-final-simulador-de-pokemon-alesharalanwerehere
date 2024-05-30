@@ -13,6 +13,7 @@ public class Batalla {
         this.pokemon2 = pokemon2;
     }
          
+    // Complejidad temporal: O(N) Tiempo lineal.
     public void iniciarBatalla() {
 
         System.out.println(pokemon1.getNombre()+" vs. "+pokemon2.getNombre());
@@ -40,6 +41,7 @@ public class Batalla {
         }
     }
      
+    // Complejidad temporal: O(1) Tiempo constante.
     private int calcularDaño(Pokemon atacante, Pokemon defensor) {
         double multiplicador = TipoPokemon.obtenerMultiplicadorDeDaño(atacante.getTipo(), defensor.getTipo());
         int dañoBase = atacante.getPuntosDeAtaque();

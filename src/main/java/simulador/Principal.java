@@ -17,6 +17,7 @@ public class Principal {
     private static List<Pokemon> pokemones = new ArrayList<>();
     private static Scanner sc = new Scanner(System.in);
         
+    // Complejidad temporal: O(N) Tiempo lineal.
     public static void main(String[] args) {
         
         int opcion;
@@ -46,7 +47,8 @@ public class Principal {
             }
         } while (opcion != 4);
     }
-
+    
+    // Complejidad temporal: O(1) Tiempo constante.
     private static void menuPrincipal(){
         System.out.println("\n╔═══════════════════════════════════════════════╗");
         System.out.println("║        Simulador de Batallas Pokémon     ║");
@@ -59,6 +61,7 @@ public class Principal {
         System.out.print("Elige una opción: ");
     } //🆗
 
+    // Complejidad temporal: O(N) Tiempo lineal.
     private static void gestionarEntrenadores(){
         int opcion;
         do {
@@ -91,7 +94,8 @@ public class Principal {
             }
         } while (opcion != 4);
     } //🆗
-
+    
+    // Complejidad temporal: O(1) Tiempo constante.
     private static void registrarNuevoEntrenador(){
         System.out.println("\n╔══════════════════════════════════════════╗");
         System.out.println("║       Registrar Nuevo Entrenador     ║");
@@ -102,6 +106,7 @@ public class Principal {
         entrenadores.add(new Entrenador(nombre));
     } //🆗
 
+    // Complejidad temporal: O(N) Tiempo lineal.
     private static void verListaDeEntrenadores(){
         System.out.println("\n╔══════════════════════════════════════════╗");
         System.out.println("║          Lista de Entrenadores       ║");
@@ -117,6 +122,7 @@ public class Principal {
         System.out.println("╚══════════════════════════════════════════╝");
     } //🆗
 
+    // Complejidad temporal: O(N) Tiempo lineal.
     private static void seleccionarEntrenador(){
         int opcionEntrenador;
         do {
@@ -253,6 +259,7 @@ public class Principal {
         } while (opcionEntrenador != 4);
     } //🆗
     
+    // Complejidad temporal: O(N) Tiempo lineal.
     private static void gestionarPokemones(){
         int opcion;
         do {
@@ -284,6 +291,7 @@ public class Principal {
         } while (opcion != 3);
     } //🆗
     
+    // Complejidad temporal: O(N) Tiempo lineal.
     private static void verPokemones() {
     System.out.println("\n╔═════════════════════════════════════════╗");
     System.out.println("║       Lista de Pokémones Registrados    ║");
@@ -296,8 +304,9 @@ public class Principal {
         }
     }
     System.out.println("╚═════════════════════════════════════════╝");
-} //🆗
+    } //🆗
 
+    // Complejidad temporal: O(1) Tiempo constante.
     private static void registrarPokemon() {
         System.out.println("\n╔══════════════════════════════════════════╗");
         System.out.println("║       Registrar Nuevo Pokémon            ║");
@@ -379,6 +388,7 @@ public class Principal {
             }
     }
 
+    // Complejidad temporal: O(N) Tiempo lineal.
     private static void iniciarBatalla(){
         int opcion;
         
@@ -450,8 +460,9 @@ public class Principal {
                     System.out.println("Opción no válida.");
             }
         } while (opcion != 6);      
-   }
+    }
     
+    // Complejidad temporal: O(N) Tiempo lineal.
     private static void persistencia(){
         final String NOMBRE_ARCHIVO = "listaPokemones.pokes";
 
