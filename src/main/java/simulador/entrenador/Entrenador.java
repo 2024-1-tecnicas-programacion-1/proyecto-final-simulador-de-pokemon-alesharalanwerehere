@@ -25,7 +25,7 @@ public class Entrenador {
         System.out.println("Pokemones de " + nombre + ":");
         int iteracion = 1;
         for (Pokemon pokemon : pokemones) {
-            System.out.println(iteracion + ". " + pokemon.getNombre() + ", Salud: " + pokemon.getSalud() + ", Ataque: " + pokemon.getPuntosDeAtaque());
+            System.out.println(iteracion + ". " + pokemon.getNombre() + ", Salud: " + pokemon.getSalud() + ", Ataque: " + pokemon.getPuntosDeAtaque()+ ", Tipo: " + pokemon.getTipo());
             iteracion++;
         }
     }

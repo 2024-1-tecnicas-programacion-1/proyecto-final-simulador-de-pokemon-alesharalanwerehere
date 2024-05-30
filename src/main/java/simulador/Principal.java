@@ -5,9 +5,12 @@ import simulador.pokemones.*;
 import java.util.Scanner;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import simulador.batalla.Batalla;
 import simulador.entrenador.Entrenador;
 import simulador.pokemon.*;
+import persistencia.ArchivosConexion;
+
 
 public class Principal {
     
@@ -16,6 +19,8 @@ public class Principal {
     private static Scanner sc = new Scanner(System.in);
         
     public static void main(String[] args) {
+        
+
         
         int opcion;
         do {
@@ -33,6 +38,7 @@ public class Principal {
                     iniciarBatalla();
                     break;
                 case 4:
+                    persistencia();
                     System.out.println("Adiós");
                     System.out.println(".....");
                     System.out.println("...");
@@ -448,7 +454,19 @@ public class Principal {
             }
         } while (opcion != 6);      
    }
-    //FALTA ANALISIS COMPLEJIDAD 
-    //FALTA PERSISTENCIA
-    //FALTA PRUEBAS UNITARIAS
+    
+    private static void persistencia(){
+        final String NOMBRE_ARCHIVO = "listaPokemones.pokes";
+
+        LinkedList<Pokemon> pokemones = new LinkedList<>();
+        
+        ArchivosConexion.guardar(pokemones, NOMBRE_ARCHIVO);
+        
+        pokemones = (LinkedList<Pokemon>)ArchivosConexion.leer(NOMBRE_ARCHIVO);
+        System.out.println("Los pokemones guardados son:");
+        for (int i = 0; i < pokemones.size(); i++) {
+            Pokemon p = pokemones.get(i);
+            System.out.println(p.getNombre() + " - Salud: " + p.getSalud() + " - Ataque: " + p.getPuntosDeAtaque() + " - " + p.getTipo() + " - " + p.getEstado());
+        }
+    }
 }
